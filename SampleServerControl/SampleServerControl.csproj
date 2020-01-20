@@ -1900,6 +1900,7 @@
     <Content Include="HomePage.aspx" />
     <Content Include="PanelKontrol.aspx" />
     <Content Include="SampleAutopostback.aspx" />
+    <Content Include="SampleDropdownList.aspx" />
     <Content Include="SampleServerControl.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1998,6 +1999,13 @@
     </Compile>
     <Compile Include="SampleAutopostback.aspx.designer.cs">
       <DependentUpon>SampleAutopostback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDropdownList.aspx.cs">
+      <DependentUpon>SampleDropdownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleDropdownList.aspx.designer.cs">
+      <DependentUpon>SampleDropdownList.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleServerControl.aspx.cs">
       <DependentUpon>SampleServerControl.aspx</DependentUpon>
