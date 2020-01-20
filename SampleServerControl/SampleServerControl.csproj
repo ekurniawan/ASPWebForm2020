@@ -126,6 +126,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="PanelKontrol.aspx" />
     <Content Include="SampleAutopostback.aspx" />
     <Content Include="SampleServerControl.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PanelKontrol.aspx.cs">
+      <DependentUpon>PanelKontrol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelKontrol.aspx.designer.cs">
+      <DependentUpon>PanelKontrol.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleAutopostback.aspx.cs">
