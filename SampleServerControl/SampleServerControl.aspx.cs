@@ -14,6 +14,7 @@ namespace SampleServerControl
 
         }
 
+        //
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             var bil = Convert.ToInt32(lblCounter.Text);
