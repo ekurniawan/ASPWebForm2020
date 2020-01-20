@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SampleServerControl.aspx.cs" Inherits="SampleServerControl.SampleServerControl" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" 
+    CodeBehind="SampleServerControl.aspx.cs"
+    Inherits="SampleServerControl.SampleServerControl" %>
 
 <!DOCTYPE html>
 
@@ -9,9 +11,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:TextBox ID="txtTanggal" TextMode="Date" 
+                runat="server" /><br />
+            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" /><Br />
             <asp:Button ID="btnAdd" 
                 OnClick="btnAdd_Click" runat="server" Text="Add" />
-            <asp:Label ID="lblCounter" runat="server" Text="0" />
+            <asp:Label ID="lblCounter" ViewStateMode="Disabled"
+                runat="server" Text="0" />
         </div>
     </form>
 </body>

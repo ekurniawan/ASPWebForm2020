@@ -7,19 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace SampleServerControl
 {
-    public partial class SampleServerControl : System.Web.UI.Page
+    public partial class SampleAutopostback : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var bil = Convert.ToInt32(lblCounter.Text);
-            bil += 1;
-            lblCounter.Text = bil.ToString();
+            lblSearch.Text = txtSearch.Text;
         }
     }
 }
