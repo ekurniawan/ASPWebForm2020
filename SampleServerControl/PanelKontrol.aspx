@@ -17,6 +17,8 @@
             <asp:Button ID="btnShow" Text="Show" runat="server" OnClick="btnShow_Click" />&nbsp;
             <asp:Button ID="btnHide" Text="Hide" runat="server" OnClick="btnHide_Click" />
             <br /><br />
+            <asp:ValidationSummary runat="server" HeaderText="Kesalahan"
+                ShowMessageBox="true" ShowSummary="true" />
             <label>Username :</label><br />
             <asp:TextBox ID="txtUsername" runat="server" /><br />
             <asp:RequiredFieldValidator ErrorMessage="{username harus diisi}" 
