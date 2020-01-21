@@ -1905,6 +1905,7 @@
     <Content Include="PanelKontrol.aspx" />
     <Content Include="SampleAjax.aspx" />
     <Content Include="SampleAutopostback.aspx" />
+    <Content Include="SampleDetailView.aspx" />
     <Content Include="SampleDropdownList.aspx" />
     <Content Include="SampleEmptyData.aspx" />
     <Content Include="SampleGrid.aspx" />
@@ -2043,6 +2044,13 @@
     </Compile>
     <Compile Include="SampleAutopostback.aspx.designer.cs">
       <DependentUpon>SampleAutopostback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDetailView.aspx.cs">
+      <DependentUpon>SampleDetailView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleDetailView.aspx.designer.cs">
+      <DependentUpon>SampleDetailView.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleDropdownList.aspx.cs">
       <DependentUpon>SampleDropdownList.aspx</DependentUpon>

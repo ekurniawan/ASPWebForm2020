@@ -13,5 +13,23 @@ namespace SampleServerControl
         {
 
         }
+
+        protected void gvBerita_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                bool isapprove = (bool)DataBinder.Eval(e.Row.DataItem, "isapprove");
+                if (isapprove)
+                {
+                    e.Row.BackColor = System.Drawing.Color.Yellow;
+                }
+            }
+
+            if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                Label lblFooter = (Label)e.Row.FindControl("lblFooter");
+                lblFooter.Text = "Ini Footer...";
+            }
+        }
     }
 }

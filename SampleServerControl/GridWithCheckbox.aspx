@@ -27,7 +27,10 @@
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="sdsKategori" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" 
         SelectCommand="SELECT * FROM [Kategori] ORDER BY [nama_kat]" />
-    <asp:GridView ID="gvBerita" runat="server" CssClass="table table-bordered" AutoGenerateColumns="False" DataKeyNames="id_berita" DataSourceID="sdsBerita">
+    <asp:GridView ID="gvBerita" runat="server" 
+        CssClass="table table-bordered" AutoGenerateColumns="False" 
+        DataKeyNames="id_berita" DataSourceID="sdsBerita" ShowFooter="true"
+        OnRowDataBound="gvBerita_RowDataBound">
         <Columns>
             <asp:BoundField DataField="id_berita" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_berita" />
             <asp:TemplateField HeaderText="Kategori">
@@ -41,6 +44,9 @@
                         DataSourceID="sdsKategori" ID="ddKategori" runat="server">
                     </asp:DropDownList>
                 </EditItemTemplate>
+                <FooterTemplate>
+                    <asp:Label ID="lblFooter" runat="server" />
+                </FooterTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="judul_berita" HeaderText="judul_berita" SortExpression="judul_berita" />
             <asp:BoundField DataField="detail_berita" HeaderText="detail_berita" SortExpression="detail_berita" />
