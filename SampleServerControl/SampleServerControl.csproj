@@ -1902,8 +1902,10 @@
     <Content Include="HomePage.aspx" />
     <Content Include="ManualEksekusi.aspx" />
     <Content Include="PanelKontrol.aspx" />
+    <Content Include="SampleAjax.aspx" />
     <Content Include="SampleAutopostback.aspx" />
     <Content Include="SampleDropdownList.aspx" />
+    <Content Include="SampleEmptyData.aspx" />
     <Content Include="SampleGrid.aspx" />
     <Content Include="SampleQueryStringParam.aspx" />
     <Content Include="SampleServerControl.aspx" />
@@ -2020,6 +2022,13 @@
       <DependentUpon>PanelKontrol.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleAjax.aspx.cs">
+      <DependentUpon>SampleAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleAjax.aspx.designer.cs">
+      <DependentUpon>SampleAjax.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SampleAutopostback.aspx.cs">
       <DependentUpon>SampleAutopostback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2033,6 +2042,13 @@
     </Compile>
     <Compile Include="SampleDropdownList.aspx.designer.cs">
       <DependentUpon>SampleDropdownList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleEmptyData.aspx.cs">
+      <DependentUpon>SampleEmptyData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleEmptyData.aspx.designer.cs">
+      <DependentUpon>SampleEmptyData.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleGrid.aspx.cs">
       <DependentUpon>SampleGrid.aspx</DependentUpon>
