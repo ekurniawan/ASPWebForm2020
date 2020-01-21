@@ -52,24 +52,57 @@
         <div class="col-md-6">
             <label>Masukan Judul Berita :</label>
             <asp:TextBox ID="txtJudul" runat="server" AutoPostBack="true" /><br />
-        <asp:SqlDataSource ID="sdsBerita" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
-            SelectCommand="SELECT * FROM [Berita] ORDER BY [judul_berita]"
-            FilterExpression="judul_berita like '%{0}%'">
-            <FilterParameters>
-                <asp:ControlParameter ControlID="txtJudul" Name="judul_berita" />
-            </FilterParameters>
-        </asp:SqlDataSource>
-        <asp:GridView ID="gvBerita" CssClass="table table-bordered"
-            runat="server" AutoGenerateColumns="False" DataKeyNames="id_berita" DataSourceID="sdsBerita">
-            <Columns>
+            <asp:SqlDataSource ID="sdsBerita" runat="server" OnUpdating="sdsBerita_Updating"
+                ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
+                SelectCommand="SELECT * FROM [Berita] ORDER BY [judul_berita]"
+                FilterExpression="judul_berita like '%{0}%'" OnSelected="sdsBerita_Selected" 
+                DeleteCommand="DELETE FROM [Berita] WHERE [id_berita] = @id_berita" 
+                InsertCommand="INSERT INTO [Berita] ([id_kat], [judul_berita], [detail_berita], [tanggal]) VALUES (@id_kat, @judul_berita, @detail_berita, @tanggal)" 
+                UpdateCommand="UPDATE [Berita] SET [id_kat] = @id_kat, [judul_berita] = @judul_berita, [detail_berita] = @detail_berita, [tanggal] = @tanggal WHERE [id_berita] = @id_berita">
+                <DeleteParameters>
+                    <asp:Parameter Name="id_berita" Type="Int32" />
+                </DeleteParameters>
+                <FilterParameters>
+                    <asp:ControlParameter ControlID="txtJudul" Name="judul_berita" />
+                </FilterParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="id_kat" Type="Int32" />
+                    <asp:Parameter Name="judul_berita" Type="String" />
+                    <asp:Parameter Name="detail_berita" Type="String" />
+                    <asp:Parameter Name="tanggal" Type="DateTime" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="id_kat" Type="Int32" />
+                    <asp:Parameter Name="judul_berita" Type="String" />
+                    <asp:Parameter Name="detail_berita" Type="String" />
+                    <asp:Parameter Name="tanggal" Type="DateTime" />
+                    <asp:Parameter Name="id_berita" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <asp:GridView ID="gvBerita" CssClass="table table-bordered"
+                runat="server" AutoGenerateColumns="False" DataKeyNames="id_berita" DataSourceID="sdsBerita">
+                <Columns>
+                    <asp:BoundField DataField="id_berita" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_berita" />
+                    <asp:BoundField DataField="judul_berita" HeaderText="Judul Berita" SortExpression="judul_berita" />
+                    <asp:BoundField DataField="detail_berita" HeaderText="Detail" SortExpression="detail_berita" />
+                    <asp:BoundField DataField="tanggal" HeaderText="Tanggal" SortExpression="tanggal" />
+                </Columns>
+            </asp:GridView>
+            <asp:Label ID="lblError" ForeColor="Red" runat="server" />
+        </div>
+       
+        <div class="col-md-6">
+             <asp:DetailsView ID="dvBerita" runat="server" CssClass="table table-bordered"
+            AutoGenerateRows="False" DataKeyNames="id_berita" DataSourceID="sdsBerita" AutoGenerateEditButton="true" >
+            <Fields>
                 <asp:BoundField DataField="id_berita" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_berita" />
-                <asp:BoundField DataField="judul_berita" HeaderText="Judul Berita" SortExpression="judul_berita" />
+                <asp:BoundField DataField="id_kat" HeaderText="Kategori" SortExpression="id_kat" />
+                <asp:BoundField DataField="judul_berita" HeaderText="Judul" SortExpression="judul_berita" />
                 <asp:BoundField DataField="detail_berita" HeaderText="Detail" SortExpression="detail_berita" />
                 <asp:BoundField DataField="tanggal" HeaderText="Tanggal" SortExpression="tanggal" />
-            </Columns>
-        </asp:GridView>
+            </Fields>
+        </asp:DetailsView>
         </div>
-        
     </div>
 
 

@@ -1902,6 +1902,7 @@
     <Content Include="SampleAutopostback.aspx" />
     <Content Include="SampleDropdownList.aspx" />
     <Content Include="SampleServerControl.aspx" />
+    <Content Include="scriptdb.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
