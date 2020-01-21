@@ -13,5 +13,13 @@ namespace SampleServerControl
         {
 
         }
+
+        private int count = 0;
+        protected void lvKategori_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            count++;
+            Label labelNo = (Label)e.Item.FindControl("lblNo");
+            labelNo.Text = count.ToString();
+        }
     }
 }

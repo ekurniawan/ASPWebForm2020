@@ -16,22 +16,52 @@
 
     <div class="row">
         <div class="col-md-6">
-            <asp:ListView ID="lvKategori" DataSourceID="sdsKategori" runat="server">
+            <asp:ListView ID="lvKategori" OnItemDataBound="lvKategori_ItemDataBound" 
+                DataSourceID="sdsKategori" DataKeyNames="id_kat" runat="server">
                 <LayoutTemplate>
                     <table class="table table-striped">
                         <tr>
+                            <th>No</th>
                             <th>ID</th>
                             <th>Nama</th>
+                            <th></th>
                         </tr>
                         <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
                     </table>
+                    <asp:DataPager ID="dpKategori" PageSize="3" runat="server">
+                        <Fields>
+                            <asp:NextPreviousPagerField ShowFirstPageButton="true"
+                                ShowPreviousPageButton="true" ShowLastPageButton="false"
+                                ShowNextPageButton="false" />
+                            <asp:NumericPagerField />
+                            <asp:NextPreviousPagerField ShowFirstPageButton="false"
+                                ShowPreviousPageButton="false"
+                                ShowNextPageButton="true"
+                                ShowLastPageButton="true" />
+                        </Fields>
+                    </asp:DataPager>
                 </LayoutTemplate>
                 <ItemTemplate>
                     <tr>
+                        <td><asp:Label ID="lblNo" runat="server" /></td>
                         <td><%# Eval("id_kat") %></td>
                         <td><%# Eval("nama_kat") %></td>
+                        <td>
+                            <asp:LinkButton CssClass="btn btn-primary btn-sm" Text="Edit"
+                               CommandName="Edit" runat="server" />
+                        </td>
                     </tr>
                 </ItemTemplate>
+                <EditItemTemplate>
+                    <div class="alert alert-success">
+                        <asp:Label ID="lblNo" runat="server" />
+                        <label>Nama Kategori :</label><br />
+                        <asp:TextBox ID="txtNama" Text='<%# Bind("nama_kat") %>' runat="server" /><br />
+                        <asp:RequiredFieldValidator ErrorMessage="Nama Required" ForeColor="Red" ControlToValidate="txtNama" runat="server" /><br />
+                        <asp:LinkButton CssClass="btn btn-primary btn-sm" Text="Update" CommandName="Update" runat="server" />&nbsp;
+                        <asp:LinkButton CssClass="btn btn-warning btn-sm" Text="Cancel" CommandName="Cancel" runat="server" />
+                    </div>
+                </EditItemTemplate>
                 <EmptyDataTemplate>
                     Data MAsih Kosong...
                 </EmptyDataTemplate>
