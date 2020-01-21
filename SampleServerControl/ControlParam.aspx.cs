@@ -13,5 +13,23 @@ namespace SampleServerControl
         {
 
         }
+
+        protected void btnBuatCookie_Click(object sender, EventArgs e)
+        {
+            HttpCookie myCookie;
+            if (Request.Cookies["id_kat"] == null)
+            {
+                myCookie = new HttpCookie("id_kat", txtKategori.Text);
+                myCookie.Expires = DateTime.Now.AddMinutes(5);
+                Response.AppendCookie(myCookie);
+            }
+            else
+            {
+                myCookie = Request.Cookies["id_kat"];
+                myCookie.Value = txtKategori.Text;
+                myCookie.Expires = DateTime.Now.AddMinutes(5);
+                Response.AppendCookie(myCookie);
+            }
+        }
     }
 }
