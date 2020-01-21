@@ -31,5 +31,10 @@ namespace SampleServerControl
                 Response.AppendCookie(myCookie);
             }
         }
+
+        protected void btnSession_Click(object sender, EventArgs e)
+        {
+            Session["id_kat"] = txtKategori.Text;
+        }
     }
 }
