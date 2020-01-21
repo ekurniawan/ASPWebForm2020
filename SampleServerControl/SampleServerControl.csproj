@@ -1909,6 +1909,7 @@
     <Content Include="SampleDropdownList.aspx" />
     <Content Include="SampleEmptyData.aspx" />
     <Content Include="SampleGrid.aspx" />
+    <Content Include="SampleListView.aspx" />
     <Content Include="SampleQueryStringParam.aspx" />
     <Content Include="SampleServerControl.aspx" />
     <Content Include="scriptdb.sql" />
@@ -2072,6 +2073,13 @@
     </Compile>
     <Compile Include="SampleGrid.aspx.designer.cs">
       <DependentUpon>SampleGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleListView.aspx.cs">
+      <DependentUpon>SampleListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleListView.aspx.designer.cs">
+      <DependentUpon>SampleListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleQueryStringParam.aspx.cs">
       <DependentUpon>SampleQueryStringParam.aspx</DependentUpon>
