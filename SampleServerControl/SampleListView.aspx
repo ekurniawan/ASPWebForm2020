@@ -17,7 +17,8 @@
     <div class="row">
         <div class="col-md-6">
             <asp:ListView ID="lvKategori" OnItemDataBound="lvKategori_ItemDataBound" 
-                DataSourceID="sdsKategori" DataKeyNames="id_kat" runat="server">
+                DataSourceID="sdsKategori" DataKeyNames="id_kat" runat="server"
+                InsertItemPosition="FirstItem">
                 <LayoutTemplate>
                     <table class="table table-striped">
                         <tr>
@@ -52,6 +53,15 @@
                         </td>
                     </tr>
                 </ItemTemplate>
+                <InsertItemTemplate>
+                    <div class="alert alert-warning">
+                        <asp:Label ID="lblNo" runat="server" />
+                        <label>Nama Kategori :</label><br />
+                        <asp:TextBox ID="txtNama" Text='<%# Bind("nama_kat") %>' runat="server" /><br />
+                        <asp:RequiredFieldValidator ErrorMessage="Nama Required" ForeColor="Red" ControlToValidate="txtNama" runat="server" /><br />
+                        <asp:LinkButton CssClass="btn btn-success btn-sm" Text="Insert" CommandName="Insert" runat="server" />
+                    </div>
+                </InsertItemTemplate>
                 <EditItemTemplate>
                     <div class="alert alert-success">
                         <asp:Label ID="lblNo" runat="server" />
