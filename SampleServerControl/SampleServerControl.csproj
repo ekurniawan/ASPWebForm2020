@@ -1899,6 +1899,7 @@
     <Content Include="Content\Startbootstrap\vendor\jquery\jquery.min.map" />
     <Content Include="Content\Startbootstrap\vendor\jquery\jquery.slim.min.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="GridWithCheckbox.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="ManualEksekusi.aspx" />
     <Content Include="PanelKontrol.aspx" />
@@ -1999,6 +2000,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridWithCheckbox.aspx.cs">
+      <DependentUpon>GridWithCheckbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridWithCheckbox.aspx.designer.cs">
+      <DependentUpon>GridWithCheckbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
