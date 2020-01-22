@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -1980,6 +1983,7 @@
     <Compile Include="ControlParam.aspx.designer.cs">
       <DependentUpon>ControlParam.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ICrud.cs" />
     <Compile Include="DAL\KategoriDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -2027,6 +2031,7 @@
     <Compile Include="ManualEksekusi.aspx.designer.cs">
       <DependentUpon>ManualEksekusi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Berita.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="PanelKontrol.aspx.cs">
       <DependentUpon>PanelKontrol.aspx</DependentUpon>
