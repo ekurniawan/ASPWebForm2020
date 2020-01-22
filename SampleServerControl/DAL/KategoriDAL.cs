@@ -67,5 +67,35 @@ namespace SampleServerControl.DAL
                 return kategori;
             }
         }
+
+        public void Insert(Kategori kategori)
+        {
+            using(SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"insert into Kategori(nama_kat) values(@nama_kat)";
+                SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.Parameters.AddWithValue("@nama_kat", kategori.nama_kat);
+                try
+                {
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    if (result != 1)
+                        throw new Exception("Insert Kategori gagal");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception($"Number: {sqlEx.Number}, Error:{sqlEx.Message}");
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                }
+            }
+        }
     }
 }
