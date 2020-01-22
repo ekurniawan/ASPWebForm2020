@@ -12,12 +12,23 @@ namespace SampleServerControl.DAL
     {
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"delete from Berita where id_berita=@id_berita";
+                try
+                {
+                    conn.Execute(strSql, new { id_berita = id });
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
         }
 
         public IEnumerable<Berita> GetAll()
         {
-            using(SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
             {
                 string strSql = @"select * from Berita order by judul_berita asc";
                 var results = conn.Query<Berita>(strSql);
@@ -64,7 +75,31 @@ namespace SampleServerControl.DAL
 
         public void Update(Berita obj)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"update Berita set id_kat=@id_kat,judul_berita=@judul_berita,
+                detail_berita=@detail_berita,tanggal=@tanggal,isapprove=@isapprove,pics=@pics 
+                where id_berita=@id_berita";
+
+                var param = new
+                {
+                    id_kat = obj.id_kat,
+                    judul_berita = obj.judul_berita,
+                    detail_berita = obj.detail_berita,
+                    tanggal = obj.tanggal,
+                    isapprove = obj.isapprove,
+                    pics = obj.pics,
+                    id_berita = obj.id_berita
+                };
+                try
+                {
+                    conn.Execute(strSql, param);
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
         }
     }
 }
