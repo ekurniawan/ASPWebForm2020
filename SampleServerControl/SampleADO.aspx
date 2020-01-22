@@ -3,6 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
+        <div class="row-md-6">
+            <asp:Label ID="lblKet" runat="server" /><br />
+            <div class="form-group">
+                <label>ID Kategori :</label>
+                <asp:TextBox ID="txtIDKategori" CssClass="form-control" runat="server" />
+            </div>
+            <div class="form-group">
+                <label>Nama Kategori :</label>
+                <asp:TextBox ID="txtNama" CssClass="form-control" runat="server" />
+            </div>
+            <asp:Button ID="btnInsert" CssClass="btn btn-primary btn-sm" Text="Insert" runat="server" OnClick="btnInsert_Click" />
+        </div>
+    </div>
+    <br /><hr />
+    <div class="row">
         <div class="col-md-6">
             <asp:GridView ID="gvKategori" CssClass="table table-bordered" runat="server">
             </asp:GridView>
@@ -16,5 +31,6 @@
             <asp:TextBox ID="txtNamaKategori" runat="server" />
         </div>
     </div>
+
 
 </asp:Content>

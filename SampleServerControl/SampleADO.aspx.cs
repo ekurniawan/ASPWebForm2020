@@ -1,4 +1,5 @@
 ﻿using SampleServerControl.DAL;
+using SampleServerControl.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,23 @@ namespace SampleServerControl
         {
             var kategori = kategoriDAL.GetById(Convert.ToInt32(txtKategori.Text));
             txtNamaKategori.Text = kategori.nama_kat;
+        }
+
+        protected void btnInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var newKategori = new Kategori
+                {
+                    nama_kat = txtNama.Text
+                };
+                kategoriDAL.Insert(newKategori);
+                lblKet.Text = $"Data Kategori {txtNama.Text} berhasil ditambah";
+            }
+            catch (Exception ex)
+            {
+                lblKet.Text = $"Error: {ex.Message}";
+            }
         }
     }
 }
