@@ -10,6 +10,11 @@ namespace SampleServerControl
 {
     public partial class SampleADO : System.Web.UI.Page
     {
+        private KategoriDAL kategoriDAL;
+        public SampleADO()
+        {
+            kategoriDAL = new KategoriDAL();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,9 +22,14 @@ namespace SampleServerControl
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            KategoriDAL kategoriDAL = new KategoriDAL();
             gvKategori.DataSource = kategoriDAL.GetAll();
             gvKategori.DataBind();
+        }
+
+        protected void btnGetID_Click(object sender, EventArgs e)
+        {
+            var kategori = kategoriDAL.GetById(Convert.ToInt32(txtKategori.Text));
+            txtNamaKategori.Text = kategori.nama_kat;
         }
     }
 }
