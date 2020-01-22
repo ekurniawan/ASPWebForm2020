@@ -68,13 +68,13 @@ namespace SampleServerControl.DAL
             }
         }
 
-        public void Insert(Kategori kategori)
+        public void Insert(string nama_kat)
         {
             using(SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
             {
                 string strSql = @"insert into Kategori(nama_kat) values(@nama_kat)";
                 SqlCommand cmd = new SqlCommand(strSql, conn);
-                cmd.Parameters.AddWithValue("@nama_kat", kategori.nama_kat);
+                cmd.Parameters.AddWithValue("@nama_kat", nama_kat);
                 try
                 {
                     conn.Open();
@@ -98,14 +98,14 @@ namespace SampleServerControl.DAL
             }
         }
 
-        public void Update(Kategori kategori)
+        public void Update(int id_kat,string nama_kat)
         {
             using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
             {
                 string strSql = @"update Kategori set nama_kat=@nama_kat where id_kat=@id_kat";
                 SqlCommand cmd = new SqlCommand(strSql, conn);
-                cmd.Parameters.AddWithValue("@nama_kat", kategori.nama_kat);
-                cmd.Parameters.AddWithValue("@id_kat", kategori.id_kat);
+                cmd.Parameters.AddWithValue("@nama_kat", nama_kat);
+                cmd.Parameters.AddWithValue("@id_kat", id_kat);
 
                 try
                 {

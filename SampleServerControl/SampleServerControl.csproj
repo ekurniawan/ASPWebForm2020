@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="BeritaWithKategori.aspx" />
     <Content Include="CommandEvent.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -1721,6 +1722,7 @@
     <Content Include="Content\Startbootstrap\vendor\jquery\jquery.slim.min.js" />
     <Content Include="ControlParam.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditKategori.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormUpload.aspx" />
@@ -1914,6 +1916,7 @@
     <Content Include="SampleEmptyData.aspx" />
     <Content Include="SampleGrid.aspx" />
     <Content Include="SampleListView.aspx" />
+    <Content Include="SampleObjectDataSource.aspx" />
     <Content Include="SampleQueryStringParam.aspx" />
     <Content Include="SampleServerControl.aspx" />
     <Content Include="scriptdb.sql" />
@@ -1962,6 +1965,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BeritaWithKategori.aspx.cs">
+      <DependentUpon>BeritaWithKategori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeritaWithKategori.aspx.designer.cs">
+      <DependentUpon>BeritaWithKategori.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CommandEvent.aspx.cs">
       <DependentUpon>CommandEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1986,12 +1996,20 @@
     <Compile Include="DAL\BeritaDAL.cs" />
     <Compile Include="DAL\ICrud.cs" />
     <Compile Include="DAL\KategoriDAL.cs" />
+    <Compile Include="DAL\ViewBeritaWithKategoriDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditKategori.aspx.cs">
+      <DependentUpon>EditKategori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditKategori.aspx.designer.cs">
+      <DependentUpon>EditKategori.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormUpload.aspx.cs">
       <DependentUpon>FormUpload.aspx</DependentUpon>
@@ -2034,6 +2052,7 @@
     </Compile>
     <Compile Include="Models\Berita.cs" />
     <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\ViewBeritaWithKategori.cs" />
     <Compile Include="PanelKontrol.aspx.cs">
       <DependentUpon>PanelKontrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2097,6 +2116,13 @@
     </Compile>
     <Compile Include="SampleListView.aspx.designer.cs">
       <DependentUpon>SampleListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleObjectDataSource.aspx.cs">
+      <DependentUpon>SampleObjectDataSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleObjectDataSource.aspx.designer.cs">
+      <DependentUpon>SampleObjectDataSource.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleQueryStringParam.aspx.cs">
       <DependentUpon>SampleQueryStringParam.aspx</DependentUpon>

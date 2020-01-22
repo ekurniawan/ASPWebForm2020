@@ -37,11 +37,8 @@ namespace SampleServerControl
         {
             try
             {
-                var newKategori = new Kategori
-                {
-                    nama_kat = txtNama.Text
-                };
-                kategoriDAL.Insert(newKategori);
+                
+                kategoriDAL.Insert(txtNama.Text);
                 lblKet.Text = $"Data Kategori {txtNama.Text} berhasil ditambah";
             }
             catch (Exception ex)
@@ -54,12 +51,10 @@ namespace SampleServerControl
         {
             try
             {
-                var updateKategori = new Kategori
-                {
-                    id_kat = Convert.ToInt32(txtIDKategori.Text),
-                    nama_kat = txtNama.Text
-                };
-                kategoriDAL.Update(updateKategori);
+                var id_kat = Convert.ToInt32(txtIDKategori.Text);
+                var nama_kat = txtNama.Text;
+                
+                kategoriDAL.Update(id_kat,nama_kat);
                 lblKet.Text = $"Data Kategori berhasil diupdate";
             }
             catch (Exception ex)

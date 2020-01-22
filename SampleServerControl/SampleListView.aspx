@@ -42,6 +42,9 @@
                         </Fields>
                     </asp:DataPager>
                 </LayoutTemplate>
+                <EditItemTemplate>
+
+                </EditItemTemplate>
                 <ItemTemplate>
                     <tr>
                         <td><asp:Label ID="lblNo" runat="server" /></td>

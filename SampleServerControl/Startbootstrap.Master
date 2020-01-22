@@ -11,6 +11,7 @@
 
     <!-- Custom styles for this template-->
     <link href=<%=ResolveUrl("~/Content/Startbootstrap/css/sb-admin-2.min.css") %> rel="stylesheet">
+    <link href=<%=ResolveUrl("~/Content/Startbootstrap/vendor/datatables/dataTables.bootstrap4.min.css") %> rel="stylesheet">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -391,7 +392,7 @@
             </div>
 
             <!-- Bootstrap core JavaScript-->
-            <script src=<%=ResolveUrl("~/Content/Startbootstrap/vendor/jquery/jquery.min.js")%> ></script>
+            <script src=<%=ResolveUrl("~/Content/Startbootstrap/vendor/jquery/jquery.min.js")%>></script>
             <script src=<%=ResolveUrl("~/Content/Startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js") %>></script>
 
             <!-- Core plugin JavaScript-->
@@ -399,6 +400,8 @@
 
             <!-- Custom scripts for all pages-->
             <script src=<%=ResolveUrl("~/Content/Startbootstrap/js/sb-admin-2.min.js") %>></script>
+            <script src=<%=ResolveUrl("~/Content/Startbootstrap/vendor/datatables/jquery.dataTables.min.js") %>></script>
+            <script src=<%=ResolveUrl("~/Content/Startbootstrap/vendor/datatables/dataTables.bootstrap4.min.js") %>></script>
         </div>
     </form>
 </body>
