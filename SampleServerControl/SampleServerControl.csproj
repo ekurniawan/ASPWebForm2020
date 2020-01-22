@@ -2026,6 +2026,7 @@
     <Compile Include="ManualEksekusi.aspx.designer.cs">
       <DependentUpon>ManualEksekusi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Kategori.cs" />
     <Compile Include="PanelKontrol.aspx.cs">
       <DependentUpon>PanelKontrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
