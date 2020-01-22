@@ -130,6 +130,35 @@ namespace SampleServerControl.DAL
             }
         }
 
-        
+        public void Delete(int id_kat)
+        {
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"delete from Kategori where id_kat=@id_kat";
+                SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.Parameters.AddWithValue("@id_kat", id_kat);
+
+                try
+                {
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    if (result != 1)
+                        throw new Exception("Delete Kategori gagal");
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception($"Number: {sqlEx.Number}, Error:{sqlEx.Message}");
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    conn.Close();
+                }
+            }
+        }
     }
 }
