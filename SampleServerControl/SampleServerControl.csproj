@@ -1983,6 +1983,7 @@
     <Compile Include="ControlParam.aspx.designer.cs">
       <DependentUpon>ControlParam.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\BeritaDAL.cs" />
     <Compile Include="DAL\ICrud.cs" />
     <Compile Include="DAL\KategoriDAL.cs" />
     <Compile Include="Default.aspx.cs">
