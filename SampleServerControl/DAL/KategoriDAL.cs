@@ -40,5 +40,32 @@ namespace SampleServerControl.DAL
                 return lstKategori;
             }
         }
+
+        public Kategori GetById(int id_kat)
+        {
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                Kategori kategori = new Kategori();
+                string strSql = @"select * from Kategori
+                                  where id_kat=@id_kat";
+                SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.Parameters.AddWithValue("@id_kat", id_kat);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        kategori.id_kat = Convert.ToInt32(dr["id_kat"]);
+                        kategori.nama_kat = dr["nama_kat"].ToString();
+                    }
+                }
+                dr.Close();
+                cmd.Dispose();
+                conn.Close();
+
+                return kategori;
+            }
+        }
     }
 }
