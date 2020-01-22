@@ -38,7 +38,28 @@ namespace SampleServerControl.DAL
 
         public void Insert(Berita obj)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"insert into Berita(id_kat,judul_berita,detail_berita,tanggal,isapprove,pics) 
+                                  values(@id_kat,@judul_berita,@detail_berita,@tanggal,@isapprove,@pics)";
+                var param = new
+                {
+                    id_kat = obj.id_kat,
+                    judul_berita = obj.judul_berita,
+                    detail_berita = obj.detail_berita,
+                    tanggal = obj.tanggal,
+                    isapprove = obj.isapprove,
+                    pics = obj.pics
+                };
+                try
+                {
+                    conn.Execute(strSql, param);
+                }
+                catch (SqlException sqlEx)
+                {
+                    throw new Exception(sqlEx.Message);
+                }
+            }
         }
 
         public void Update(Berita obj)
