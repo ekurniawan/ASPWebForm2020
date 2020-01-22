@@ -13,7 +13,9 @@
                 <label>Nama Kategori :</label>
                 <asp:TextBox ID="txtNama" CssClass="form-control" runat="server" />
             </div>
-            <asp:Button ID="btnInsert" CssClass="btn btn-primary btn-sm" Text="Insert" runat="server" OnClick="btnInsert_Click" />
+            <asp:Button ID="btnInsert" CssClass="btn btn-primary btn-sm" Text="Insert" runat="server" OnClick="btnInsert_Click" />&nbsp;
+            <asp:Button ID="btnUpdate" Text="Update" CssClass="btn btn-warning btn-sm" runat="server" OnClick="btnUpdate_Click" />&nbsp;
+            <asp:Button ID="btnDelete" CssClass="btn btn-danger btn-sm" Text="Delete" runat="server" OnClick="btnDelete_Click" />
         </div>
     </div>
     <br /><hr />

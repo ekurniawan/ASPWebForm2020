@@ -49,5 +49,36 @@ namespace SampleServerControl
                 lblKet.Text = $"Error: {ex.Message}";
             }
         }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var updateKategori = new Kategori
+                {
+                    id_kat = Convert.ToInt32(txtIDKategori.Text),
+                    nama_kat = txtNama.Text
+                };
+                kategoriDAL.Update(updateKategori);
+                lblKet.Text = $"Data Kategori berhasil diupdate";
+            }
+            catch (Exception ex)
+            {
+                lblKet.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                kategoriDAL.Delete(Convert.ToInt32(txtIDKategori.Text));
+                lblKet.Text = $"Data Kategori berhasil didelete";
+            }
+            catch (Exception ex)
+            {
+                lblKet.Text = $"Error: {ex.Message}";
+            }
+        }
     }
 }
