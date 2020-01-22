@@ -22,6 +22,8 @@
 
     <div class="row">
         <div class="col-md-6">
+
+
             <asp:ListView ID="lvKategori" DataKeyNames="id_kat"
                 DataSourceID="odsKategori" runat="server" InsertItemPosition="FirstItem">
                 <LayoutTemplate>
@@ -59,7 +61,7 @@
                 <EditItemTemplate>
                     <div class="form-group">
                         <label>ID :</label>
-                        <asp:TextBox  ID="txtID" CssClass="form-control"
+                        <asp:TextBox ID="txtID" CssClass="form-control"
                             Text='<%# Bind("id_kat") %>' ReadOnly="true" ValidationGroup="update" runat="server" />
                     </div>
                     <div class="form-group">
