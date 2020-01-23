@@ -33,7 +33,7 @@
                                 <th>ID</th>
                                 <th>Kategori</th>
                                 <th>&nbsp;</th>
-                                <th>$nbsp;</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,5 +94,4 @@
     </script>
 
 </asp:Content>
-
 

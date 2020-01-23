@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
 using SampleServerControl.Models;
+using Dapper;
 
 namespace SampleServerControl.DAL
 {
@@ -158,6 +159,21 @@ namespace SampleServerControl.DAL
                     cmd.Dispose();
                     conn.Close();
                 }
+            }
+        }
+
+        public Kategori GetKategoriWithBerita(int id_kat)
+        {
+            using(SqlConnection conn = new SqlConnection(Helpers.DBHelper.GetConn()))
+            {
+                string strSql = @"select * from Kategori where id_kat=@id_kat";
+                var kategori = conn.QuerySingle<Kategori>(strSql, new { id_kat = id_kat });
+
+                string strSql2 = @"select * from Berita where id_kat=@id_kat";
+                var results = conn.Query<Berita>(strSql2, new { id_kat = id_kat });
+
+                kategori.Berita = results;
+                return kategori;
             }
         }
     }

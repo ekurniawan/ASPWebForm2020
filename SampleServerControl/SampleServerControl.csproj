@@ -1911,10 +1911,12 @@
     <Content Include="SampleADO.aspx" />
     <Content Include="SampleAjax.aspx" />
     <Content Include="SampleAutopostback.aspx" />
+    <Content Include="SampleDapper.aspx" />
     <Content Include="SampleDetailView.aspx" />
     <Content Include="SampleDropdownList.aspx" />
     <Content Include="SampleEmptyData.aspx" />
     <Content Include="SampleGrid.aspx" />
+    <Content Include="SampleJQuery.aspx" />
     <Content Include="SampleListView.aspx" />
     <Content Include="SampleObjectDataSource.aspx" />
     <Content Include="SampleQueryStringParam.aspx" />
@@ -1994,6 +1996,7 @@
       <DependentUpon>ControlParam.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\BeritaDAL.cs" />
+    <Compile Include="DAL\BeritaWithKategoriDAL.cs" />
     <Compile Include="DAL\ICrud.cs" />
     <Compile Include="DAL\KategoriDAL.cs" />
     <Compile Include="DAL\ViewBeritaWithKategoriDAL.cs" />
@@ -2052,6 +2055,7 @@
     </Compile>
     <Compile Include="Models\Berita.cs" />
     <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Mahasiswa.cs" />
     <Compile Include="Models\ViewBeritaWithKategori.cs" />
     <Compile Include="PanelKontrol.aspx.cs">
       <DependentUpon>PanelKontrol.aspx</DependentUpon>
@@ -2082,6 +2086,13 @@
     <Compile Include="SampleAutopostback.aspx.designer.cs">
       <DependentUpon>SampleAutopostback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SampleDapper.aspx.cs">
+      <DependentUpon>SampleDapper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleDapper.aspx.designer.cs">
+      <DependentUpon>SampleDapper.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SampleDetailView.aspx.cs">
       <DependentUpon>SampleDetailView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2109,6 +2120,13 @@
     </Compile>
     <Compile Include="SampleGrid.aspx.designer.cs">
       <DependentUpon>SampleGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleJQuery.aspx.cs">
+      <DependentUpon>SampleJQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleJQuery.aspx.designer.cs">
+      <DependentUpon>SampleJQuery.aspx</DependentUpon>
     </Compile>
     <Compile Include="SampleListView.aspx.cs">
       <DependentUpon>SampleListView.aspx</DependentUpon>

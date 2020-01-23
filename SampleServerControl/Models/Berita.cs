@@ -14,5 +14,8 @@ namespace SampleServerControl.Models
         public DateTime tanggal { get; set; }
         public bool isapprove { get; set; }
         public string pics { get; set; }
+
+        public Kategori Kategori { get; set; }
+
     }
 }
